@@ -93,6 +93,9 @@ const RegisterForm = () => {
             </IonList>
             
             <IonButton className="register-btn" onClick={sendFormData}>Register</IonButton>
+            
+            <IonButton className="goto-login-btn" href="/login" fill="clear">I have an acount</IonButton>
+
 
             <IonToast
                 isOpen={showToastError}

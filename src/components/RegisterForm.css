@@ -14,3 +14,9 @@
 .register-btn:active{
     opacity: .8;
 }
+.goto-login-btn{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 50px;
+}
