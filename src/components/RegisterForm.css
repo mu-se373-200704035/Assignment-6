@@ -1,0 +1,16 @@
+.form{
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+.register-btn{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 25ms ease-in-out;
+    --background: var(--ion-color-primary)
+}
+.register-btn:active{
+    opacity: .8;
+}
