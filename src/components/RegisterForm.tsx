@@ -13,7 +13,6 @@ const RegisterForm = () => {
     })
     const [confirm, setConfirm] = React.useState("");
     const [showToastError, setShowToastError] = React.useState(false);
-    const [showToastSuccess, setShowToastSuccess] = React.useState(false);
 
     const handleChangeUsername = (newName : string) => {
         setFormData(prevData => {
@@ -101,12 +100,6 @@ const RegisterForm = () => {
                 isOpen={showToastError}
                 onDidDismiss={() => setShowToastError(false)}
                 message="Form is not valid"
-                duration={3000}
-            />
-            <IonToast
-                isOpen={showToastSuccess}
-                onDidDismiss={() => setShowToastSuccess(false)}
-                message="Registered successfully!"
                 duration={3000}
             />
         </form>

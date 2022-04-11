@@ -1,4 +1,5 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import LoginForm from '../components/LoginForm';
 import './Login.css';
 
 const Login: React.FC = () => {
@@ -15,8 +16,7 @@ const Login: React.FC = () => {
             <IonTitle size="large">Login</IonTitle>
           </IonToolbar>
         </IonHeader>
-
-
+        <LoginForm />
       </IonContent>
     </IonPage>
   );
