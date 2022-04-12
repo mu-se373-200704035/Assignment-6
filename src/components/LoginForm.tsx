@@ -3,6 +3,8 @@ import React from "react";
 import { Redirect } from "react-router";
 //style
 import "./LoginForm.css";
+//context
+import UserContext from "../context";
 
 const LoginForm = () => {
     
@@ -14,6 +16,7 @@ const LoginForm = () => {
     const [showToastSuccess, setShowToastSuccess] = React.useState(false);
     const [showToastInvalid, setShowToastInvalid] = React.useState(false);
     const [redirect, setRedirect] = React.useState(false);
+    const {user, setUser} = React.useContext(UserContext);
 
     const handleChangeUsername = (newName : string) => {
         setFormData(prevData => {
@@ -41,6 +44,7 @@ const LoginForm = () => {
             .then(data => {
                 if(data.message!=="Invalid username or password"){
                     setShowToastSuccess(true);
+                    setUser(data.user)
                     setRedirect(true);
                 }else{
                     setShowToastError(true);

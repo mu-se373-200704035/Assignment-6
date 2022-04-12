@@ -1,11 +1,43 @@
 import './ExploreContainer.css';
+import UserContext from "../context";
+import { IonItem, IonLabel, IonList, IonText } from '@ionic/react';
+import React from 'react';
+import { Redirect } from 'react-router';
 
-interface ContainerProps { }
+const ExploreContainer: React.FC = () => {
+  
+  const { user } = React.useContext(UserContext);
 
-const ExploreContainer: React.FC<ContainerProps> = () => {
+  if(!user){
+    return (
+        <div>
+          <Redirect push to="/login"/>
+        </div>
+      )
+  }
   return (
     <div className="container">
-      <strong>HOMEPAGE</strong>
+      <section className="profile">
+        <h2>Profile</h2>
+        <IonList>
+          <IonItem>
+            <IonLabel>id</IonLabel>
+            <IonText>{user.id}</IonText>
+          </IonItem>
+          <IonItem>
+            <IonLabel>username</IonLabel>
+            <IonText>{user.username}</IonText>
+          </IonItem>
+          <IonItem>
+            <IonLabel>email</IonLabel>
+            <IonText>{user.email}</IonText>
+          </IonItem>
+          <IonItem>
+            <IonLabel>gender</IonLabel>
+            <IonText>{user.gender}</IonText>
+          </IonItem>
+        </IonList>
+      </section>
     </div>
   );
 };
