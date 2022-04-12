@@ -1,12 +1,12 @@
 import './ExploreContainer.css';
 import UserContext from "../context";
-import { IonItem, IonLabel, IonList, IonText } from '@ionic/react';
+import { IonButton, IonItem, IonLabel, IonList, IonText } from '@ionic/react';
 import React from 'react';
 import { Redirect } from 'react-router';
 
 const ExploreContainer: React.FC = () => {
   
-  const { user } = React.useContext(UserContext);
+  const { user,setUser } = React.useContext(UserContext);
 
   if(!user){
     return (
@@ -37,6 +37,7 @@ const ExploreContainer: React.FC = () => {
             <IonText>{user.gender}</IonText>
           </IonItem>
         </IonList>
+        <IonButton onClick={()=>setUser(null)}>Log Out</IonButton>
       </section>
     </div>
   );
