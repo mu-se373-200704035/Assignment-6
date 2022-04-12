@@ -45,6 +45,7 @@ const LoginForm = () => {
                 if(data.message!=="Invalid username or password"){
                     setShowToastSuccess(true);
                     setUser(data.user)
+                    setRedirect(false);
                     setRedirect(true);
                 }else{
                     setShowToastError(true);
