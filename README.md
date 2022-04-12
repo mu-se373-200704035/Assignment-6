@@ -4,6 +4,8 @@ In this assignment firstly I created a database and a table for users. The php c
 
 I created 2 pages for login and register. The homepage is already created automatically with a blank project. I haven't paid attention to styling this one because that was not the point.
 
+After a successful login, profile details of the user is shown in the homepage. I achieved this via React Context API.
+
 Some screenshots are added below:
 
 ## Register Page 
@@ -14,10 +16,12 @@ Some screenshots are added below:
 
 ![login](/src/img/ss2.PNG)
 
-## Homepage
+## Homepage (profile details)
 
-![homepage](/src/img/ss3.PNG)
+![homepage](/src/img/ss5.PNG)
 
 ## Database table
 
 ![db-table](src/img/ss4.PNG)
+
+
