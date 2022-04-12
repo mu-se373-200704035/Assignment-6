@@ -13,7 +13,9 @@ const RegisterForm = () => {
     })
     const [confirm, setConfirm] = React.useState("");
     const [showToastError, setShowToastError] = React.useState(false);
-
+    const [showToastSuccess, setShowToastSuccess] = React.useState(false);
+    const [showToastInUse, setShowToastInUse] = React.useState(false);
+    
     const handleChangeUsername = (newName : string) => {
         setFormData(prevData => {
             return {
@@ -53,7 +55,14 @@ const RegisterForm = () => {
         if(formData.password===confirm && formData.username!=="" && formData.password!==""&&formData.email!==""&&formData.gender!==""&&formData.email.includes("@")){
             fetch(`http://192.168.1.38:8080/indexregister.php?username=${formData.username}&email=${formData.email}&password=${formData.password}&gender=${formData.gender}`)
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                console.log(data)
+                if(data.message==="User registered successfully"){
+                    setShowToastSuccess(true);
+                }else{
+                    setShowToastInUse(true);
+                }
+            })
             .catch(e=>console.log("ERROR", e))
         }
         else{
@@ -100,6 +109,18 @@ const RegisterForm = () => {
                 isOpen={showToastError}
                 onDidDismiss={() => setShowToastError(false)}
                 message="Form is not valid"
+                duration={3000}
+            />
+            <IonToast
+                isOpen={showToastSuccess}
+                onDidDismiss={() => setShowToastSuccess(false)}
+                message="Registered Successfully!!"
+                duration={3000}
+            />
+            <IonToast
+                isOpen={showToastInUse}
+                onDidDismiss={() => setShowToastInUse(false)}
+                message="Username may be in use!"
                 duration={3000}
             />
         </form>
