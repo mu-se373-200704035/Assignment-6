@@ -17,3 +17,7 @@ Some screenshots are added below:
 ## Homepage
 
 ![homepage](/src/img/ss3.PNG)
+
+## Database table
+
+![db-table](src/img/ss4.PNG)
