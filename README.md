@@ -8,12 +8,12 @@ Some screenshots are added below:
 
 ## Register Page 
 
-![register]("/src/img/ss1.PNG")
+![register](/src/img/ss1.PNG)
 
 ## Login Page 
 
-![login]("/src/img/ss2.PNG")
+![login](/src/img/ss2.PNG)
 
 ## Homepage
 
-![homepage]("/src/img/ss3.PNG")
+![homepage](/src/img/ss3.PNG)
