@@ -2,6 +2,7 @@ import React from "react";
 import { IonButton, IonInput, IonItem, IonLabel, IonList, IonToast } from "@ionic/react";
 //style
 import "./RegisterForm.css";
+import { Redirect } from "react-router";
 
 const RegisterForm = () => {
     
@@ -15,6 +16,7 @@ const RegisterForm = () => {
     const [showToastError, setShowToastError] = React.useState(false);
     const [showToastSuccess, setShowToastSuccess] = React.useState(false);
     const [showToastInUse, setShowToastInUse] = React.useState(false);
+    const [redirect, setRedirect] = React.useState(false);
     
     const handleChangeUsername = (newName : string) => {
         setFormData(prevData => {
@@ -59,6 +61,7 @@ const RegisterForm = () => {
                 console.log(data)
                 if(data.message==="User registered successfully"){
                     setShowToastSuccess(true);
+                    setRedirect(true);
                 }else{
                     setShowToastInUse(true);
                 }
@@ -123,6 +126,7 @@ const RegisterForm = () => {
                 message="Username may be in use!"
                 duration={3000}
             />
+            {redirect?(<Redirect push to="/login"/>) : null}
         </form>
     )
 
