@@ -6,8 +6,11 @@ I created 2 pages for login and register. The homepage is already created automa
 
 Some screenshots are added below:
 
-![register]("/src/img/ss1")
+## Register Page 
+![register]("/src/img/ss1.png")
 
-![login]("/src/img/ss2")
+## Login Page 
+![login]("/src/img/ss2.png")
 
-![home]("/src/img/ss3")
+## Homepage
+![home]("/src/img/ss3.png")
