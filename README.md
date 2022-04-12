@@ -6,6 +6,8 @@ I created 2 pages for login and register. The homepage is already created automa
 
 After a successful login, profile details of the user is shown in the homepage. I achieved this via React Context API.
 
+Root path is register page. If succesfully registered, app redirects to login page. And if succesfully logged in, app redirects to homepage. You cannot access the homepage before logging in which is the whole point of authentication.
+
 Some screenshots are added below:
 
 ## Register Page 
